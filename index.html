@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>未来金融学院 - 初学者客户开发手册</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { scroll-behavior: smooth; }
+    .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .dialog-box { background-color: #f3f4f6; border-left: 4px solid #3b82f6; padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-radius: 0.375rem; }
+    .dialog-client { border-left-color: #10b981; }
+    .table-header { background-color: #f9fafb; font-weight: 600; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Header -->
+<header class="bg-white shadow p-4">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <h1 class="text-xl font-bold">未来金融学院</h1>
+    <nav class="space-x-4 text-sm">
+      <a href="#psychology" class="hover:underline">客户心理</a>
+      <a href="#process" class="hover:underline">开发流程</a>
+      <a href="#objections" class="hover:underline">异议处理</a>
+      <a href="#community" class="hover:underline">社群引导</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto p-6 space-y-10">
+
+  <!-- 目标 -->
+  <section>
+    <h2 class="section-title">一、教材目标</h2>
+    <ul class="list-disc pl-5 space-y-1 text-gray-700">
+      <li>理解初学者客户心理及核心需求</li>
+      <li>掌握不同阶段的沟通技巧</li>
+      <li>提供可直接使用的模拟对话模板</li>
+      <li>学会自然引导客户加入Telegram社群</li>
+      <li>学会处理客户异议和建立信任</li>
+    </ul>
+  </section>
+
+  <!-- 心理分析 -->
+  <section id="psychology">
+    <h2 class="section-title">二、初学者客户心理分析</h2>
+    <p class="mb-2">初学者客户的特点：</p>
+    <ul class="list-disc pl-5 space-y-1 text-gray-700">
+      <li><strong>核心需求：</strong>学习金融基础知识、初步资产增值、副业收入</li>
+      <li><strong>关注点：</strong>低风险、易上手、明确收益</li>
+      <li><strong>心理特征：</strong>缺乏经验、容易犹豫、需要信任感</li>
+    </ul>
+  </section>
+
+  <!-- 开发流程 -->
+  <section id="process">
+    <h2 class="section-title">三、客户开发流程</h2>
+
+    <!-- 阶段1 -->
+    <div class="mb-6">
+      <h3 class="font-semibold text-lg">阶段 1：首次接触（破冰）</h3>
+      <p>目的：建立初步信任，判断客户类型</p>
+      <div class="dialog-box">
+        <strong>你：</strong>嗨 [客户名字]，你对投资有兴趣吗？你之前有股票或加密货币经验吗？  
+      </div>
+      <div class="dialog-box dialog-client">
+        <strong>客户：</strong>没有，我只是想了解一下。  
+      </div>
+      <div class="dialog-box">
+        <strong>你：</strong>太好了！我们有一个专为初学者设计的学习社群，可以学习基础知识并看到实际收益案例。你想加入吗？  
+      </div>
+    </div>
+
+    <!-- 阶段2 -->
+    <div class="mb-6">
+      <h3 class="font-semibold text-lg">阶段 2：需求确认（兴趣引导）</h3>
+      <p>目的：明确客户目标，增强兴趣</p>
+      <div class="dialog-box">
+        <strong>你：</strong>你是想学习投资知识，还是希望开始实际投资来增加收入呢？  
+      </div>
+      <div class="dialog-box dialog-client">
+        <strong>客户：</strong>我想尝试赚点额外收入。  
+      </div>
+      <div class="dialog-box">
+        <strong>你：</strong>很好！我们的初学者计划正是为像你这样的客户设计——边学习边实践，并且低风险入门。  
+      </div>
+    </div>
+
+    <!-- 阶段3 -->
+    <div class="mb-6">
+      <h3 class="font-semibold text-lg">阶段 3：价值展示（信任建立）</h3>
+      <div class="dialog-box">
+        <strong>你：</strong>初学者通常会从ETF或基础加密货币投资开始。我们提供逐步教学和模拟工具，让你先练习，再进行真实投资。  
+      </div>
+      <div class="dialog-box dialog-client">
+        <strong>客户：</strong>听起来不错，但我怕亏钱。  
+      </div>
+      <div class="dialog-box">
+        <strong>你：</strong>完全理解！这也是我们设计模拟练习的原因。你只有在自己熟练后才会进行真实投资。  
+      </div>
+    </div>
+
+    <!-- 阶段4 -->
+    <div class="mb-6">
+      <h3 class="font-semibold text-lg">阶段 4：社群引导（行动号召）</h3>
+      <div class="dialog-box">
+        <strong>你：</strong>我们有一个初学者专属的Telegram群，里面有策略演示、问答和学员分享。你想加入吗？  
+      </div>
+      <div class="dialog-box dialog-client">
+        <strong>客户：</strong>好的，我想加入。  
+      </div>
+      <div class="dialog-box">
+        <strong>你：</strong>太棒了！这是链接：[Telegram 群链接]。我会在群里指导你，帮你开始实践。  
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 异议处理 -->
+  <section id="objections">
+    <h2 class="section-title">四、常见异议处理技巧</h2>
+    <table class="min-w-full border border-gray-200 text-left text-sm">
+      <thead>
+        <tr class="table-header">
+          <th class="p-2 border">客户异议</th>
+          <th class="p-2 border">应对方法</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-2 border">我怕亏钱</td>
+          <td class="p-2 border">强调低风险策略、模拟练习、循序渐进学习</td>
+        </tr>
+        <tr>
+          <td class="p-2 border">我没经验</td>
+          <td class="p-2 border">提供完整初学者学习路径，保证从零开始学</td>
+        </tr>
+        <tr>
+          <td class="p-2 border">我时间不够</td>
+          <td class="p-2 border">提供短时高效课程，灵活安排</td>
+        </tr>
+        <tr>
+          <td class="p-2 border">我不确定效果</td>
+          <td class="p-2 border">分享真实案例和学员反馈，提供免费体验</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 社群引导 -->
+  <section id="community">
+    <h2 class="section-title">五、社群引导方法</h2>
+    <ul class="list-disc pl-5 space-y-1 text-gray-700">
+      <li>免费体验策略：降低心理门槛，让客户先加入社群体验价值</li>
+      <li>明确下一步行动：提供清晰指引，如“点击链接加入群组”</li>
+      <li>持续价值输出：分享学习资料、案例、市场资讯，建立长期信任</li>
+      <li>个性化跟进：关注客户学习进度，及时答疑和提供指导</li>
+    </ul>
+  </section>
+
+  <!-- 沟通核心原则 -->
+  <section>
+    <h2 class="section-title">六、沟通核心原则</h2>
+    <ul class="list-disc pl-5 space-y-1 text-gray-700">
+      <li>语言简单明了：避免金融术语，使用日常表达</li>
+      <li>强调安全和低风险：初学者最关注</li>
+      <li>轻量承诺：免费加入社群或尝试模拟投资</li>
+      <li>持续跟进：定期提供价值内容，增强黏性</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-white shadow mt-10 p-6 text-sm text-gray-500 text-center">
+  © 2025 未来金融学院. 保留所有权利.
+</footer>
+
+</body>
+</html>
