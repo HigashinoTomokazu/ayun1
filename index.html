@@ -346,6 +346,382 @@
 </head>
 <body>
 
+  <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>客户问答 — AAF学院 常见疑问与互动回复</title>
+<style>
+  :root{
+    --bg:#f6f8fb;
+    --card:#ffffff;
+    --accent:#0a63b7;
+    --muted:#6b7280;
+    --border:#e6eef8;
+    --glass: rgba(10,99,183,0.06);
+  }
+  body{
+    font-family: "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, #f3f6fb 0%, #eef4fb 100%);
+    color:#12202b;
+    margin:0;
+    padding:28px;
+  }
+  header{
+    max-width:1000px;
+    margin:0 auto 20px;
+    text-align:left;
+  }
+  h1{
+    margin:0 0 6px;
+    font-size:22px;
+    color:var(--accent);
+  }
+  p.lead{
+    margin:0;
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  .container{
+    max-width:1000px;
+    margin:18px auto 60px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:14px;
+    box-shadow:0 6px 18px rgba(16,40,70,0.04);
+  }
+
+  .q{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .qnum{
+    background:var(--glass);
+    color:var(--accent);
+    border-radius:8px;
+    font-weight:700;
+    padding:8px 10px;
+    min-width:44px;
+    text-align:center;
+  }
+  .qtext{
+    font-weight:700;
+    margin:0 0 8px;
+    font-size:15px;
+  }
+  .answer{
+    color:#0b2430;
+    line-height:1.65;
+    margin:0 0 12px;
+    white-space:pre-wrap;
+  }
+
+  .cta-row{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+
+  .btn{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:14px;
+  }
+  .btn.secondary{
+    background:#fff;
+    color:var(--accent);
+    border:1px solid var(--border);
+  }
+  .btn.ghost{
+    background:transparent;
+    color:var(--muted);
+    border:1px dashed var(--border);
+  }
+
+  details{ margin-top:10px; }
+  summary{
+    cursor:pointer;
+    font-weight:700;
+    color:var(--accent);
+    outline:none;
+  }
+
+  .meta{
+    font-size:13px;
+    color:var(--muted);
+    margin-top:10px;
+  }
+
+  /* small responsive adjustments */
+  @media (max-width:640px){
+    .q{flex-direction:row;}
+    .qnum{min-width:40px;padding:6px 8px;font-size:13px;}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>AAF 学院 — 高净值客户常见问答（互动版）</h1>
+    <p class="lead">下面每条回答都带有引导式后续选项，方便与客户进行互动式沟通与持续跟进。</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Q1 -->
+    <article class="card" id="q1">
+      <div class="q">
+        <div class="qnum">1</div>
+        <div style="flex:1">
+          <div class="qtext">你们的投资平台安全吗？我怎么知道资金不会有问题？</div>
+
+          <div class="answer">
+非常理解您的担忧，安全始终是我们放在首位。
+我们的合作平台在美国受到 SEC 与 FinCEN 的双重监管，所有资金通过独立托管账户管理，并采用多重签名与冷储存方案来确保存放安全。
+我们建议客户用事实验证平台：查监管登记、查看第三方审计报告、核验托管银行信息，而不是只听宣传。
+如果您愿意，我可以把平台的注册信息和第三方审计摘要发给您核对。
+          </div>
+
+          <div class="cta-row">
+            <button class="btn" onclick="showDetail('d1','reg')">把注册信息发给我</button>
+            <button class="btn secondary" onclick="showDetail('d1','audit')">发审计摘要（简要）</button>
+            <button class="btn ghost" onclick="showDetail('d1','talk')">先电话说一下流程</button>
+          </div>
+
+          <details id="d1" style="display:none">
+            <summary>附加说明（点击展开）</summary>
+            <div style="margin-top:10px;color:#0b2430">
+我们通常提供：
+1) 平台监管登记页截图及注册号；2) 托管银行/托管账户说明；3) 最近12个月的第三方审计摘要（敏感信息会脱敏）。
+您想先看哪一项？我可以直接发到您常用的联系方式或这里上传PDF。
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- Q2 -->
+    <article class="card" id="q2">
+      <div class="q">
+        <div class="qnum">2</div>
+        <div style="flex:1">
+          <div class="qtext">我之前投资被骗过，现在有点害怕再投入，可以理解吗？</div>
+
+          <div class="answer">
+当然可以理解，谨慎是成熟投资者的必要素养。
+AAF 学院绝不会要求您在未了解清楚前盲目投入。我们的流程是先讲清楚操作逻辑、风险控制、止盈止损与资金出入流程，您确认理解并认可后，才会安排实盘操作。
+如果您愿意，我们可以先从教学/模拟账户开始，您亲自验证流程与结果，再决定是否投入本金。
+          </div>
+
+          <div class="cta-row">
+            <button class="btn" onclick="showDetail('d2','sim')">我想先看模拟演示</button>
+            <button class="btn secondary" onclick="showDetail('d2','flow')">把资金出入流程发我</button>
+            <button class="btn ghost" onclick="showDetail('d2','chat')">能和助理聊聊我的顾虑吗</button>
+          </div>
+
+          <details id="d2" style="display:none">
+            <summary>附加说明（点击展开）</summary>
+            <div style="margin-top:10px;color:#0b2430">
+我们通常建议三步走：
+1) 学习阶段：课程 + 模拟盘；2) 小额试仓：验证实际操作与风控；3) 正式配置：分批建仓并持续复盘。
+您更倾向哪一种启动方式？模拟演示我现在就可以安排。
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- Q3 -->
+    <article class="card" id="q3">
+      <div class="q">
+        <div class="qnum">3</div>
+        <div style="flex:1">
+          <div class="qtext">为什么我看到有的人工智能系统或数字资产收益那么高？你们的回报看起来更保守？</div>
+
+          <div class="answer">
+市面上宣称“日赚5%或10%”的多数是高杠杆或未受监管的项目，波动与风险极高。
+我们更专注长期可持续的复利增长：AI 作为工具，靠模型提升效率，但必须有人监管、合规并控制仓位与流动性。
+我们的目标不是短期暴利，而是用严谨的风控把收益稳定化，提高长期复利效应。
+如果您愿意，我可以根据您目前偏好的产品类型，给出对比分析供您参考。
+          </div>
+
+          <div class="cta-row">
+            <button class="btn" onclick="showDetail('d3','compare')">给我一个对比分析</button>
+            <button class="btn secondary" onclick="showDetail('d3','model')">发AI模型简要说明</button>
+            <button class="btn ghost" onclick="showDetail('d3','risk')">我想了解高杠杆风险</button>
+          </div>
+
+          <details id="d3" style="display:none">
+            <summary>附加说明（点击展开）</summary>
+            <div style="margin-top:10px;color:#0b2430">
+如果您告诉我更偏好“保守、稳健、或激进”三类之一，我会把AAF系统与典型高杠杆产品的回撤、年化与流动性做横向表格，直观对比。
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- Q4 -->
+    <article class="card" id="q4">
+      <div class="q">
+        <div class="qnum">4</div>
+        <div style="flex:1">
+          <div class="qtext">为什么和你视频的时候，你的口语不像美国人？</div>
+
+          <div class="answer">
+先生，美国是个移民国家，我本人也属于移民群体之一，尽管在美国生活和工作多年，但口音里仍保留早期家乡的语音特征。
+很多长期在美的人也有类似情况——思维、工作方式美式，口音带多文化色彩。
+对我来说，沟通的重点是清晰与效率，而不是刻意模仿某种口音。
+您刚才提到的这一点很敏锐，这正是认真投资者的好习惯。您怎么看？
+          </div>
+
+          <div class="cta-row">
+            <button class="btn" onclick="showDetail('d4','ack')">我理解，我们继续</button>
+            <button class="btn secondary" onclick="showDetail('d4','more')">能说说你的背景吗</button>
+            <button class="btn ghost" onclick="showDetail('d4','voice')">视频里我觉得听不清怎么办</button>
+          </div>
+
+          <details id="d4" style="display:none">
+            <summary>附加说明（点击展开）</summary>
+            <div style="margin-top:10px;color:#0b2430">
+如果您希望更标准的发音交流，我们可以用文字记录要点，或提前发送简短的语音/文字总结，确保信息无误。
+您更偏好哪种方式？
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- Q5 -->
+    <article class="card" id="q5">
+      <div class="q">
+        <div class="qnum">5</div>
+        <div style="flex:1">
+          <div class="qtext">这不正是AI 3.0 应该做的吗？大多数人工智能每天大约能赚2-4%，克拉克是否已经在用它投资？</div>
+
+          <div class="answer">
+先生，如果我理解正确，您关心的是AI版本、日收益承诺以及是否实盘使用的问题。
+AI投研确实以算法为核心，但任何“每日稳定2-4%”的说法都应该谨慎。合规机构不会保证每日收益；模型表现受市场条件、数据质量与风控约束影响。
+我们不会承诺百分百盈利。即便过去某策略在回测或历史窗口表现优秀，也不等于未来必然复现。
+如果您愿意，我可以提供一份基于 FFA 交易系统的可视化交易数据样本（回测与实盘对比），帮助您判别系统的稳健性。需要我现在把样本发给您吗？
+          </div>
+
+          <div class="cta-row">
+            <button class="btn" onclick="showDetail('d5','sample')">发送 FFA 可视化样本</button>
+            <button class="btn secondary" onclick="showDetail('d5','paper')">发算法说明书与回测摘要</button>
+            <button class="btn ghost" onclick="showDetail('d5','simacc')">是否可以先看纸质/模拟账户</button>
+          </div>
+
+          <details id="d5" style="display:none">
+            <summary>附加说明（点击展开）</summary>
+            <div style="margin-top:10px;color:#0b2430">
+提示：
+1) 纸质/模拟账户可验证执行逻辑；2) 实盘样本能看到账户资金曲线与回撤；3) 算法说明书会说明数据源与风控参数。
+请告诉我您想先看哪项，我马上准备。
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </article>
+
+    <p style="text-align:center;color:var(--muted);margin-top:8px;font-size:13px">
+      需要我把以上任何一项整理成可下载的PDF或发到您绑定的联系方式吗？（比如注册信息、审计、回测样本）点上面的相应按钮即可。
+    </p>
+
+  </main>
+
+<script>
+  // simple show/hide details behavior to simulate interaction
+  function showDetail(id,mode){
+    const details = document.getElementById(id);
+    if(!details) return;
+    // if hidden, show and scroll into view
+    if(details.style.display === "none" || details.style.display === ""){
+      details.style.display = "block";
+      details.open = true;
+      details.scrollIntoView({behavior:"smooth", block:"center"});
+    }
+    // toggle inner content based on mode: highlight a summary line
+    const inner = details.querySelector('div');
+    if(!inner) return;
+    let msg = "";
+    switch(id+"|"+mode){
+      case "d1|reg":
+        msg = "已准备注册信息清单：公司名、注册号、州注册页截图。请告知您要接收的渠道（此处仅演示）。";
+        break;
+      case "d1|audit":
+        msg = "将发送最近12个月的第三方审计摘要（财务健康、托管验证、关键合规点）。";
+        break;
+      case "d1|talk":
+        msg = "我们可以安排助理与您做一段简短通话，解释托管与提现流程。";
+        break;
+      case "d2|sim":
+        msg = "模拟演示包括：真实界面回放、下单到风控触发的完整流程。";
+        break;
+      case "d2|flow":
+        msg = "资金出入流程示例：入金方式、托管账户、提现路径与对账周期。";
+        break;
+      case "d2|chat":
+        msg = "助理可以私聊形式解答您的顾虑，随时安排。";
+        break;
+      case "d3|compare":
+        msg = "对比分析将展示：回撤、年化、杠杆与流动性差异。需您确认偏好风险级别。";
+        break;
+      case "d3|model":
+        msg = "模型说明包含：数据源、回测方法、止损逻辑与再平衡规则（概要版）。";
+        break;
+      case "d3|risk":
+        msg = "我会列出高杠杆常见风险：爆仓、流动性断裂、滑点与监管风险。";
+        break;
+      case "d4|ack":
+        msg = "感谢理解，我们继续沟通投资细节。";
+        break;
+      case "d4|more":
+        msg = "背景说明：在美国生活/工作的年限、专业领域与实践经验（概要）。可按需提供更详细介绍。";
+        break;
+      case "d4|voice":
+        msg = "我们可以在视频后提供逐条文字摘要，或换成语音+文字双重确认方式。";
+        break;
+      case "d5|sample":
+        msg = "我将准备一份 FFA 系统的可视化样本（资金曲线、回撤、交易明细摘要）。确认接收渠道。";
+        break;
+      case "d5|paper":
+        msg = "算法说明书摘要将包含：策略逻辑、回测窗口与关键参数（去除商业敏感信息）。";
+        break;
+      case "d5|simacc":
+        msg = "纸质/模拟账户可展示执行逻辑与订单路由，推荐先验证。";
+        break;
+      default:
+        msg = "已展开，您可以指定希望我发哪类资料或以何种方式接收。";
+    }
+    inner.textContent = msg;
+  }
+
+  // initialize details display none
+  document.querySelectorAll('details').forEach(d=>d.style.display='none');
+</script>
+
+</body>
+</html>
+
 <h1>客户接粉、引导与激活流程</h1>
 
 <div class="section">
