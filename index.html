@@ -1359,7 +1359,263 @@ AAF学院将利用大家的投资习惯、偏好以及成长数据，结合收�
   </tbody>
 </table>
 
+  <!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>基础资产形成测验</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 欧美风格页面设计 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
 
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #1e90ff;
+            margin-top: 30px;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        input[type="text"], textarea, select {
+            width: 80%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .question-section {
+            margin-bottom: 40px;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #0c6cd1;
+        }
+
+        .footer {
+            text-align: center;
+            margin: 30px 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e7f3ff;
+            border-left: 6px solid #1e90ff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    基础资产形成测验
+</header>
+  
+<main>
+    <form id="quizForm">
+        <!-- 选择题 -->
+        <div class="question-section">
+            <h2>1. Multiple Choice Questions (5 points each, total 25 points)</h2>
+            <ol>
+                <li>
+                    What are the two main ways to accumulate wealth?
+                    <br>
+                    <label><input type="radio" name="q1" value="A"> A. Saving and investing</label><br>
+                    <label><input type="radio" name="q1" value="B"> B. Spending and saving</label><br>
+                    <label><input type="radio" name="q1" value="C"> C. Investing and borrowing</label><br>
+                    <label><input type="radio" name="q1" value="D"> D. Borrowing to buy a house</label>
+                </li>
+                <li>
+                    What is the main feature of "compound interest" in long-term investing?
+                    <br>
+                    <label><input type="radio" name="q2" value="A"> A. Interest gradually decreases</label><br>
+                    <label><input type="radio" name="q2" value="B"> B. Assets grow exponentially</label><br>
+                    <label><input type="radio" name="q2" value="C"> C. Asset value remains constant</label><br>
+                    <label><input type="radio" name="q2" value="D"> D. Principal remains fixed</label>
+                </li>
+                <li>
+                    Which method effectively diversifies investment risk?
+                    <br>
+                    <label><input type="radio" name="q3" value="A"> A. Invest all funds in domestic real estate</label><br>
+                    <label><input type="radio" name="q3" value="B"> B. Invest all funds in a single stock</label><br>
+                    <label><input type="radio" name="q3" value="C"> C. Diversify across multiple asset classes and regions</label><br>
+                    <label><input type="radio" name="q3" value="D"> D. Keep funds in different accounts at the same bank</label>
+                </li>
+                <li>
+                    To improve the stability of savings, which method is recommended?
+                    <br>
+                    <label><input type="radio" name="q4" value="A"> A. Automatic insurance purchase</label><br>
+                    <label><input type="radio" name="q4" value="B"> B. Automatic transfer to a savings account</label><br>
+                    <label><input type="radio" name="q4" value="C"> C. Automatic loan repayment</label><br>
+                    <label><input type="radio" name="q4" value="D"> D. Automatic stock purchase</label>
+                </li>
+                <li>
+                    Which is an appropriate life plan?
+                    <br>
+                    <label><input type="radio" name="q5" value="A"> A. No goals, go with the flow</label><br>
+                    <label><input type="radio" name="q5" value="B"> B. Only focus on short-term needs</label><br>
+                    <label><input type="radio" name="q5" value="C"> C. Set clear goals, calculate financial needs, and prepare for emergencies</label><br>
+                    <label><input type="radio" name="q5" value="D"> D. Keep all funds in one account to reduce management hassle</label>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 填空题 -->
+        <div class="question-section">
+            <h2>2. Fill in the blanks (5 points each, total 25 points)</h2>
+            <ol>
+                <li>家庭管理的基础是准确理解和管理 <input type="text" name="f1"> 和 <input type="text" name="f2">，创造盈余并储蓄。</li>
+                <li>投资收益可能高于储蓄，但有 <input type="text" name="f3"> 风险。</li>
+                <li>定期投资可以有效降低 <input type="text" name="f4"> 风险，并防止高估和低估。</li>
+                <li>分散投资可以降低单一市场或资产的 <input type="text" name="f5"> 风险。</li>
+                <li>长期投资可以利用 <input type="text" name="f6"> 效应稳定增加资产。</li>
+            </ol>
+        </div>
+
+        <!-- 判断题 -->
+        <div class="question-section">
+            <h2>3. True or False (5 points each, total 20 points)</h2>
+            <ol>
+                <li>To accumulate wealth, all income should be invested immediately, avoiding savings. 
+                    <select name="t1">
+                        <option value="">Select</option>
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </li>
+                <li>Investment products should be chosen based on individual risk tolerance and needs. 
+                    <select name="t2">
+                        <option value="">Select</option>
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </li>
+                <li>When planning life, only current needs should be considered, and future plans adjusted casually. 
+                    <select name="t3">
+                        <option value="">Select</option>
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </li>
+                <li>Diversification can completely eliminate investment risk. 
+                    <select name="t4">
+                        <option value="">Select</option>
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 简答题 -->
+        <div class="question-section">
+            <h2>4. Short Answer Questions (15 points each, total 30 points)</h2>
+            <ol>
+                <li>Explain why an "automatic savings system" is important in personal finance. Provide a concrete example.<br>
+                    <textarea name="s1" rows="4" cols="80"></textarea>
+                </li>
+                <li>Assume you have a monthly surplus of ¥50,000. Design a long-term, periodic, and diversified investment strategy to accumulate wealth. Explain your steps and reasoning.<br>
+                    <textarea name="s2" rows="4" cols="80"></textarea>
+                </li>
+            </ol>
+        </div>
+
+        <button type="submit">Submit Test</button>
+    </form>
+
+    <div id="result" style="display:none;"></div>
+</main>
+
+<div class="footer">
+    Full score: 100 points | Passing score: 80 points | Score ≥ 95 points will receive "The University of Money" book
+</div>
+
+<script>
+    const correctAnswersMC = { q1: 'A', q2: 'B', q3: 'C', q4: 'B', q5: 'C' };
+    const correctAnswersTF = { t1: 'False', t2: 'True', t3: 'False', t4: 'False' };
+
+    document.getElementById('quizForm').addEventListener('submit', function(event){
+        event.preventDefault();
+
+        let score = 0;
+        // 选择题评分
+        for(let key in correctAnswersMC){
+            let radios = document.getElementsByName(key);
+            for(let r of radios){
+                if(r.checked && r.value === correctAnswersMC[key]){
+                    score += 5;
+                }
+            }
+        }
+
+        // 判断题评分
+        for(let key in correctAnswersTF){
+            let select = document.getElementsByName(key)[0];
+            if(select.value === correctAnswersTF[key]){
+                score += 5;
+            }
+        }
+
+        // 简答题和填空题暂不评分
+        let resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        let passText = score >= 40 ? 'Congratulations! You passed the automatic scoring section.' : 'You did not pass the automatic scoring section.';
+        resultDiv.innerHTML = `<strong>Your Score (MC + TF only): ${score} / 45</strong><br>${passText}<br>Note: Fill-in-the-blank and short answer questions require manual grading.`;
+
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
