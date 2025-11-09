@@ -177,6 +177,247 @@
   © 2025 未来金融学院. 保留所有权利.
 </footer>
 
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Esther Clark — Momentum Trading Academy Assistant</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.04)}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#071028 0%, #071c2b 100%);color:#e6eef6}
+    .container{max-width:1100px;margin:36px auto;padding:24px}
+    header{display:flex;gap:16px;align-items:center}
+    .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,#0ea5a4,#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+    h1{margin:0;font-size:20px}
+    .sub{color:var(--muted);font-size:13px}
+    .layout{display:grid;grid-template-columns:320px 1fr;gap:18px;margin-top:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .sidebar .section{margin-bottom:12px}
+    label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+    select,input[type=text]{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit}
+    button{background:var(--accent);border:none;padding:8px 12px;border-radius:8px;color:#04202a;font-weight:600;cursor:pointer}
+    .chat-window{display:flex;flex-direction:column;height:640px}
+    .messages{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:10px}
+    .composer{display:flex;gap:8px;padding-top:8px}
+    .msg{max-width:75%;padding:10px;border-radius:10px}
+    .msg.user{align-self:flex-end;background:linear-gradient(90deg,#0ea5a4,#06b6d4);color:#012022}
+    .msg.assistant{align-self:flex-start;background:rgba(255,255,255,0.03);color:inherit}
+    .meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+    .quick-buttons{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:13px;cursor:pointer}
+    .materials{display:flex;flex-direction:column;gap:8px}
+    .material{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02)}
+    footer.note{margin-top:12px;color:var(--muted);font-size:12px}
+    @media (max-width:900px){.layout{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">EC</div>
+      <div>
+        <h1>Esther Clark — Momentum Trading Academy 助理</h1>
+        <div class="sub">基于角色设定：37岁，住在纽约上东区。负责接待、资料发送与学习辅导。</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="card sidebar">
+        <div class="section">
+          <label>语言 / Language</label>
+          <select id="langSelect">
+            <option value="cn">中文（简体）</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <label>客户阶段 / Client Stage</label>
+          <select id="stageSelect">
+            <option value="intro">初学者 / Beginner</option>
+            <option value="intermediate">有经验 / Intermediate</option>
+            <option value="advanced">进阶 / Advanced</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <label>快速示例 / Quick Prompts</label>
+          <div class="quick-buttons" id="quickBtns"></div>
+        </div>
+
+        <div class="section">
+          <label>资料包 / Materials</label>
+          <div class="materials" id="materials">
+            <div class="material"><div>动量核心策略概览 (PDF)</div><button onclick="sendMaterial('Momentum Core Strategy Overview')">发送</button></div>
+            <div class="material"><div>仓位与风险管理指南 (PDF)</div><button onclick="sendMaterial('Position Sizing & Risk Guide')">发送</button></div>
+            <div class="material"><div>本周市场动向报告</div><button onclick="sendMaterial('Weekly Market Outlook Report')">发送</button></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <label>Esther 个人信息 / Persona</label>
+          <div style="font-size:13px;color:var(--muted)">Name: Esther Clark · Age: 37 · Location: 125 E 72nd St, Apt 8B, New York, NY 10021
+          <div style="margin-top:6px;">Role: Assistant to Prof. Benjamin Porter at Momentum Trading Academy</div></div>
+        </div>
+
+      </aside>
+
+      <main class="card chat-window">
+        <div class="meta">会话模拟器 — 你可以使用快速示例或在下面输入客户消息，Esther 会按照预设语气回复。</div>
+        <div class="messages" id="messages" role="log" aria-live="polite"></div>
+
+        <div class="composer">
+          <input type="text" id="userInput" placeholder="输入客户消息，例如：我想学习动量交易，应该从哪里开始？" />
+          <button id="sendBtn">发送</button>
+          <button id="resetBtn" style="background:#334155;color:#e6eef6">清空</button>
+        </div>
+        <div style="padding-top:8px" class="meta">注：此页面为前端示例，不含后端邮件或真实文件传输逻辑。可根据需要接入API。</div>
+      </main>
+    </div>
+
+    <footer class="note">使用说明：左侧选择语言与学员阶段，点击“快速示例”或输入客户问题；Esther 将使用模板回复并可发送预设资料。页面为单文件示例，便于嵌入或二次开发。</footer>
+  </div>
+
+  <script>
+    // 模板文本（中文与英文）
+    const TEMPLATES = {
+      cn: {
+        greeting: "您好～我是来自纽约的 Momentum Trading Academy 助理 Esther Clark。很高兴认识您。请问今天想从哪个方面开始？课程介绍还是资料包？",
+        confirmStage: {
+          intro: "如果您刚开始学习，我建议从《动量交易基础篇》开始。这个模块包含入门概念与简单实战演示。",
+          intermediate: "既然您已有基础，可以直接阅读《风险控制与执行力提升指南》。我们还会陪同复盘练习。",
+          advanced: "对进阶学员，建议关注策略回测与仓位优化章节。我们可以安排实盘演练。"
+        },
+        reassure: "我完全理解这种感受。很多学员都会经历这个阶段。我们可以一步步来，重点放在纪律与风险管理上。",
+        sendMaterial: title => `我已为您准备好《${title}》，请查收（示例触发，实际发送需对接邮箱/文件服务）。`,
+        followUp: "我会定期跟进您的学习进度，若需要我也可以安排与Porter教授的答疑环节。"
+      },
+      en: {
+        greeting: "Hello — I’m Esther Clark, assistant at Momentum Trading Academy in New York. Nice to meet you. Would you like an intro to our courses or specific study materials?",
+        confirmStage: {
+          intro: "If you’re beginning, I recommend the 'Momentum Basics' module. It covers core concepts and simple live examples.",
+          intermediate: "Since you have some experience, our 'Risk & Execution' guide would be a good next step — plus live review sessions.",
+          advanced: "For advanced students, focus on backtesting and position optimization. We can arrange supervised practice trades."
+        },
+        reassure: "I completely understand how that feels — many students go through this. Let’s work step-by-step with an emphasis on discipline and risk control.",
+        sendMaterial: title => `I have prepared the "${title}" for you. (This is a demo; actual delivery requires backend integration.)`,
+        followUp: "I’ll check in on your progress regularly, and can arrange a Q&A with Professor Porter if you’d like."
+      }
+    };
+
+    const QUICK_PROMPTS = {
+      cn: [
+        '首次接待：问候并询问需求',
+        '发送资料：动量核心策略概览',
+        '安抚学员：面对亏损时的回复',
+        '学习计划：建议一周一模块'
+      ],
+      en: [
+        'First contact: greet and ask needs',
+        'Send material: Momentum Core Strategy',
+        'Reassure: response for a loss',
+        'Learning plan: one module per week'
+      ]
+    };
+
+    const materials = [
+      'Momentum Core Strategy Overview',
+      'Position Sizing & Risk Guide',
+      'Weekly Market Outlook Report'
+    ];
+
+    // UI refs
+    const langSelect = document.getElementById('langSelect');
+    const stageSelect = document.getElementById('stageSelect');
+    const quickBtns = document.getElementById('quickBtns');
+    const messages = document.getElementById('messages');
+    const userInput = document.getElementById('userInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    function initQuickButtons(){
+      quickBtns.innerHTML='';
+      const lang = langSelect.value;
+      QUICK_PROMPTS[lang].forEach((t,i)=>{
+        const b = document.createElement('div'); b.className='chip'; b.textContent=t; b.onclick = ()=> quickAction(i);
+        quickBtns.appendChild(b);
+      });
+    }
+
+    function quickAction(index){
+      const lang = langSelect.value;
+      const text = QUICK_PROMPTS[lang][index];
+      simulateUser(text);
+    }
+
+    function appendMessage(text, role='assistant'){
+      const el = document.createElement('div'); el.className='msg '+ (role==='user'? 'user' : 'assistant');
+      el.textContent = text;
+      messages.appendChild(el);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function simulateUser(text){
+      appendMessage(text,'user');
+      setTimeout(()=>generateReply(text),300);
+    }
+
+    function generateReply(userText){
+      const lang = langSelect.value;
+      const tpl = TEMPLATES[lang];
+
+      // simple intent heuristics (best-effort)
+      const lower = userText.toLowerCase();
+      let reply='';
+
+      if(/(hello|hi|您好|你好|greet)/.test(lower)){
+        reply = tpl.greeting;
+      } else if(/资料|material|send|发送/.test(lower)){
+        // pick first matching material
+        const found = materials.find(m => userText.toLowerCase().includes(m.toLowerCase())) || materials[0];
+        reply = tpl.sendMaterial(found);
+      } else if(/亏损|loss|lost|担心|焦虑/.test(lower)){
+        reply = tpl.reassure + '\n\n' + tpl.followUp;
+      } else if(/学习|module|模块|plan|计划/.test(lower)){
+        const stage = stageSelect.value;
+        reply = tpl.confirmStage[stage] + '\n\n' + tpl.followUp;
+      } else if(/first|初次|接待|greeting/.test(lower)){
+        reply = tpl.greeting;
+      } else {
+        // fallback: combine stage advice + offer materials
+        const stage = stageSelect.value;
+        reply = tpl.confirmStage[stage] + '\n\n' + tpl.sendMaterial(materials[0]);
+      }
+
+      appendMessage(reply,'assistant');
+    }
+
+    // send material helper (demo)
+    function sendMaterial(title){
+      const lang = langSelect.value;
+      appendMessage(TEMPLATES[lang].sendMaterial(title),'assistant');
+    }
+
+    // events
+    sendBtn.addEventListener('click', ()=>{
+      const txt = userInput.value.trim();
+      if(!txt) return;
+      simulateUser(txt);
+      userInput.value='';
+    });
+    resetBtn.addEventListener('click', ()=>{messages.innerHTML=''; appendMessage('System initialized. You may start the conversation.','assistant')});
+    langSelect.addEventListener('change', initQuickButtons);
+    stageSelect.addEventListener('change', ()=>{appendMessage('Stage changed to '+stageSelect.value,'assistant')});
+
+    // initialize
+    initQuickButtons();
+    appendMessage('System initialized. You may start the conversation.','assistant');
+  </script>
+</body>
+</html>
+
+  
 </body>
 </html>
 
